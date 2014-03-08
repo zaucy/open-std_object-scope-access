@@ -1,4 +1,33 @@
-open-std_object-scope-access
+Object Scope Access
 ============================
 
-Proposal for C++ Object Scope Access
+Instead of accessing a member of an object with `object.member` you can instead use `object.{ /* use members here */ }` this creates a scope just like you would with `{}` but the object's members are exposed.
+
+```c++
+class Object {
+public:
+  void doSomething(int withThis);
+};
+
+// ...
+
+Object obj;
+
+obj.{
+  int n = 12;
+  doSomething(n);
+}
+```
+
+Creating a variable within the object scope does not create the variable within the objects scope. The above would be the same as this...
+
+```c++
+Object obj;
+
+{
+  int n = 12;
+  obj.doSomething(n);
+}
+```
+
+Accessing an objects scope is just another way to create a scope.
