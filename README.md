@@ -30,4 +30,38 @@ Object obj;
 }
 ```
 
-Accessing an objects scope is just another way to create a scope.
+Accessing an objects scope is just another way to create a scope. Therefore you can use it with `if`, `else`, `for`, `while`, `switch` or even functions and lambdas. (Feeling wishy washy about this part)
+
+```c++
+Object obj;
+
+if(100 > 10) obj.{
+  // ...
+} else obj.{
+  // ...
+}
+
+while(true) obj.{
+  // ...
+}
+
+for(int i=0; i > 100; i++) obj.{
+  
+}
+
+switch(10) obj.{
+case 10:
+  // ...
+default:
+  // ...
+}
+
+void doCoolThings() obj.{
+  
+}
+
+[] obj.{
+  
+}
+```
+
